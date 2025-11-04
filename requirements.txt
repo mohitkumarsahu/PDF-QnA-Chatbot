@@ -1,0 +1,19 @@
+# Import necessary libraries
+import os, res
+from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain.chains import ConversationalRetrievalChain
+
+
+
+
+from flask import Flask, render_template, request, redirect
+from PyPDF2 import PdfReader
+
+#Please install PdfReader
+from langchain_community.llms import Ollama
+from langchain_text_splitters import CharacterTextSplitter
+
+
+from langchain_community.chat_message_histories import ChatMessageHistory
+from langchain.memory import ConversationBufferMemory
