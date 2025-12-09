@@ -26,4 +26,5 @@ RUN mkdir -p __data__
 EXPOSE 5000
 
 # Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "--timeout", "120", "--workers", "1", "Gen_AI_final_pdfchat:app"]
+
+CMD gunicorn --bind 0.0.0.0:$PORT --timeout 120 --workers 1 Gen_AI_final_pdfchat:app
