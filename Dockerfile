@@ -22,9 +22,6 @@ COPY . .
 # Create data directory
 RUN mkdir -p __data__
 
-# Expose Flask port
-EXPOSE 5000
-
-# Run the application
-
+# Run the application using dynamic port from Render
 CMD gunicorn --bind 0.0.0.0:$PORT --timeout 120 --workers 1 Gen_AI_final_pdfchat:app
+
