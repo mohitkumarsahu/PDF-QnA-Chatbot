@@ -26,4 +26,4 @@ RUN mkdir -p __data__
 EXPOSE 5000
 
 # Run the application
-CMD ["python", "Gen_AI_final_pdfchat.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "--timeout", "120", "--workers", "1", "Gen_AI_final_pdfchat:app"]
